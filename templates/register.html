@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'sass/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grid.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/media.css' %}" />
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            padding: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-image: url("{% static 'img/header-bg.jpg' %}");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--* Ro'yxatdan o'tish formasi  -->
+    <div class="container">
+        <div class="sign__up">
+          <i class='bx bx-x'></i>
+          <div class="sign-title">Ro'yhatdan o'tish</div>
+          <form action="{% url 'register' %}" method="post">
+            <div class="input-item">
+              <div class="input-text">Ismni kiriting</div>
+              <input type="text" name="FirstName" placeholder="ism">
+            </div>
+            <div class="input-item">
+              <div class="input-text">Familyani kiriting</div>
+              <input type="text" name="LastName" placeholder="familya">
+            </div>
+            <div class="input-item">
+                <div class="input-text">Telefon raqam</div>
+                <input type="text" name="PhoneNumber" placeholder="+998">
+              </div>
+            <div class="input-item">
+              <div class="input-text">E-mail kIriting</div>
+              <input type="email" name="Email" placeholder="@gmail.com">
+            </div>
+            <div class="input-item">
+                <div class="input-text">Parol Yarating</div>
+                <input type="password" name="Password" placeholder="+998">
+              </div><div class="input-item">
+                <div class="input-text">Parolni qayta kiriting</div>
+                <input type="password" name="Password" placeholder="+998">
+              </div>
+            <div class="form-btns d-flex justify-center">
+              <button type="submit">Yuborish</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--* Ro'yxatdan o'tish formasi  -->
+</body>
+</html>

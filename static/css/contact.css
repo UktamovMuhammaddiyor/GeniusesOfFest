@@ -1,0 +1,82 @@
+.sign__up {
+    width: 400px;
+    padding: 30px 40px;
+    background-color: rgba(255, 255, 255, 0.486);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(91, 206, 235);
+    transition: 0.3s;
+}
+
+input {
+    border: none;
+    outline: none;
+    transition: 0.2s;
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+input:focus {
+    box-shadow: 0px 0px 2px 3px rgba(95, 179, 247, 0.5);
+}
+
+.input-item > input {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+.sign-title {
+    padding-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.input-item {
+    padding-bottom: 10px;
+}
+
+.input-text {
+    padding-bottom: 5px;
+    font-size: 17px;
+}
+
+.form-btns button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgb(48, 135, 216);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-btns {
+    margin: 1rem 0;
+}
+
+.form-btns button:hover {
+    opacity: 0.8;
+}
+
+.form-btns button a {
+    color: white;
+}
+
+.form-btns button:active {
+    opacity: 0.6;
+    box-shadow: 0px 0px 0px 3px rgb(22, 80, 134);
+}
+
+.bx-x {
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.bx-x:hover {
+    color: rgb(212, 87, 87);
+}
+

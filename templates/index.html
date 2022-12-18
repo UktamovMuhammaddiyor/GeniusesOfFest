@@ -1,0 +1,97 @@
+{% extends 'header.html' %} {% load static %} {% block title %}
+<title>Home Page</title>
+{% endblock title %} {% block content %}
+
+<!-- ? navbar -->
+<div class="navbar-section">
+  <div class="container">
+    <nav class="navbar d-flex justify-between align-center">
+      <a class="logo" href="#">Logo</a>
+      <ul class="navbar-list d-flex">
+        <li class="navbar-item">
+          <a class="navbar-link" href="#">Bosh Sahifa</a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="#">Biz Haqimizda</a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="#">Blog</a>
+        </li>
+        <li class="navbar-item">
+          <a class="navbar-link" href="#">Bog'lanish</a>
+        </li>
+      </ul>
+      <div class="navbar-right d-flex align-center">
+        <div class="search-item"><i class="bx bx-search"></i></div>
+        {% if user.is_authenticated %}
+        <a href="/logout">{{ user.first_name }}</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="btn nav-btn">Kirish</a>
+        {% endif %}
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- ? navbar -->
+
+<!-- ? header -->
+<header class="header">
+  <div class="container">
+    <div class="header-item">
+      <div class="header-title">
+        Ayollarni huquqlarini targ'ibot qilish Online platformasiga xush
+        kelibsiz
+      </div>
+      <div class="header-btns">
+        <button class="btn header-btn d-flex align-center">
+          Batafsil <i class="bx bx-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ? header -->
+
+<!-- ? statistika -->
+<div class="statistik">
+  <div class="container">
+    <div class="statistik-section">
+      <div class="row justify-between">
+        <div class="col-4">
+          <div class="statistik-title">
+            Bizning platformamizda <br />
+            foydalanuvchilar
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="statistik-box">
+            <div class="sbox-number">16+</div>
+            <div class="sbox-text">Yoshdan kattalar</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="statistik-box">
+            <div class="sbox-number">5.2K+</div>
+            <div class="sbox-text">Faol ishtirokchilar</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="statistik-box">
+            <div class="sbox-number">10K+</div>
+            <div class="sbox-text">Hamma foydalanuvchilar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ? statistika -->
+
+<!-- ? catalog -->
+<div class="catalog">
+  <div class="container">
+    <div class="row"></div>
+  </div>
+</div>
+<!-- ? catalog -->
+{% endblock content %}
