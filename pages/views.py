@@ -16,13 +16,13 @@ def SignUp(request):
         form = request.POST
         unique_id = uuid4()
 
-        try:
+        if (not CustomUser.objects.filter(email=form['Email'])) and (not CustomUser.objects.filter(phone_number=form['PhoneNumber'])):
             newUser = CustomUser.objects.create(username=unique_id, first_name=form['FirstName'], last_name=form['LastName'], phone_number=form['PhoneNumber'], password=make_password(f"{form['Password']}"), email=f"{form['Email']}", is_staff=False, is_superuser=False)
             user = authenticate(request, username=unique_id, password=form['Password'])
             login(request, user)
             return redirect('home')
-        except:
-            return HttpResponse("<h1>This is user already signup.<br><a href='/login/'>You can signIn.</h1><a href=''>Return Register page</a>")
+        # except:
+            # return HttpResponse("<h1>This is user already signup.<br><a href='/login/'>You can signIn.</h1><a href=''>Return Register page</a>")
 
     return render(request, "register.html")
 
@@ -34,12 +34,16 @@ def SignIn(request):
         username = form["UserName"]
         password = form["Password"]
         
-        user = authenticate(request, first_name=username, password=password)
-        
-        if user is None:
-            user = authenticate(request, email=username, password=password)
+        user2 = CustomUser.objects.filter(first_name=username)
 
-        if user is not None:
+        if not user2:
+            user2 = CustomUser.objects.filter(email=username)
+        
+        user = []
+        if len(user2) > 0:
+            user = authenticate(request, username=user2[0].username, password=password)
+
+        if user:
             login(request, user)
             return redirect('home')
         else:
